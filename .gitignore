@@ -34,10 +34,10 @@
 xcom/.vs/xcom
 xcom/Debug
 xcom/x64
-xdisk_gui/.vs/xcom
+xdisk_gui/.vs/xdisk_gui
 xdisk_gui/Debug
 xdisk_gui/x64
-xdisk_server/.vs/xcom
+xdisk_server/.vs/xdisk_server
 xdisk_server/Debug
 xdisk_server/x64
 
