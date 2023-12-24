@@ -1,0 +1,23 @@
+1. 回调函数如何处理？库里一般不能有业务逻辑（2.6.3）
+通过函数指针传过来
+```
+typedef void (*ListenCBFunc)(int sock, struct sockaddr* addr, int socklen, void* arg);
+```
+回调函数的参数由库传递，不是自己传递
+2. intptr_t是什么？
+intptr_t 类型通常用于需要将指针转换为整数值的情况，例如在某些底层编程或与指针相关的计算中。它旨在提供一种可移植的方式来处理指针和整数之间的转换，而无需关心具体的平台和编译器细节。
+```c
+#include <cstdint>
+
+int main() {
+    int* ptr = nullptr;
+    intptr_t intValue = reinterpret_cast<intptr_t>(ptr);
+
+    // 执行一些与 intValue 相关的操作
+
+    // 将 intValue 转换回指针类型
+    int* ptr2 = reinterpret_cast<int*>(intValue);
+
+    return 0;
+}
+```

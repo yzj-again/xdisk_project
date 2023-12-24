@@ -1,0 +1,43 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+# big file
+xcom/.vs/xcom
+xcom/Debug
+xcom/x64
+xdisk_gui/.vs/xcom
+xdisk_gui/Debug
+xdisk_gui/x64
+xdisk_server/.vs/xcom
+xdisk_server/Debug
+xdisk_server/x64
+
