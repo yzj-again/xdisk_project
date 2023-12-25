@@ -8,6 +8,8 @@ void XFileServerTask::ReadCB(const XMsg* msg) {
         std::cout << "MSG_GETDIR" << std::endl;
         GetDir(msg);
         break;
+    case MSG_UPLOAD_INFO:
+        std::cout << "MSG_UPLOAD_INFO" << std::endl;
     default:
         break;
     }

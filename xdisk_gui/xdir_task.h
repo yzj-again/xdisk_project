@@ -15,6 +15,7 @@ public:
     std::string get_server_path() const { return server_path_; };
     void set_server_path(std::string serverPath) { this->server_path_ = serverPath; }
 private:
+    /// ÎÄ¼şÂ·¾¶
     std::string server_path_ = "";
 };
 

@@ -46,9 +46,15 @@
     <ClCompile Include="xdir_task.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="xupload_task.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="xdir_task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xupload_task.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

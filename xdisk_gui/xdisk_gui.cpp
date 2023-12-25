@@ -15,9 +15,7 @@ XDiskGUI::XDiskGUI(QWidget* parent)
     QObject::connect(XDiskClient::Get(), SIGNAL(SDir(std::string)), this, SLOT(UpdateDir(std::string)));
 }
 
-void XDiskGUI::Refresh() {
-    QMessageBox box;
-    box.setText("ss");
+void XDiskGUI::UpdateServerInfo() {
     // 获取到三个值， 服务器路径 服务器IP 服务器端口
     std::string ip = ui.ipEdit->text().toStdString();
     std::string root = ui.serverPathEdit->text().toStdString();
@@ -25,6 +23,9 @@ void XDiskGUI::Refresh() {
     XDiskClient::Get()->set_server_port(port);
     XDiskClient::Get()->set_server_ip(ip);
     XDiskClient::Get()->set_server_path(root);
+}
+void XDiskGUI::Refresh() {
+    UpdateServerInfo();
     XDiskClient::Get()->GetDir();
 
     // 1.连接服务器
@@ -56,10 +57,8 @@ void XDiskGUI::Upload() {
     if (filename.isEmpty()) {
         return;
     }
-    // 插入到列表
-    ui.fileListWidget->insertRow(0);
-    ui.fileListWidget->setItem(0, 0, new QTableWidgetItem(filename));
-    ui.fileListWidget->setItem(0, 1, new QTableWidgetItem(tr("%1Byte").arg(1900)));
+    UpdateServerInfo();
+    XDiskClient::Get()->Upload(filename.toStdString());
 }
 
 XDiskGUI::~XDiskGUI()

@@ -99,6 +99,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="xupload_task.cpp" />
     <QtRcc Include="xdisk_gui.qrc" />
     <QtUic Include="xdisk_gui.ui" />
     <QtMoc Include="xdisk_gui.h" />
@@ -109,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="xdir_task.h" />
+    <ClInclude Include="xupload_task.h" />
     <QtMoc Include="xdisk_client.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
