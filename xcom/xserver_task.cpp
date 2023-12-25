@@ -1,5 +1,6 @@
 #include "xserver_task.h"
 #include <iostream>
+#include <string.h>
 #include <event2/event.h>
 #include <event2/listener.h>
 
@@ -27,7 +28,8 @@ bool XServerTask::Init() {
         std::cout << "listen_port" << server_port_ << "failed!" << std::endl;
         return false;
     }
-    std::cout << "listen_port" << server_port_ << "success!" << std::endl;
+    std::cout << "listen port " << server_port_ << " success!" << std::endl;
+    return true;
 }
 
 void SListenCB(struct evconnlistener* evc, evutil_socket_t client_socket, struct sockaddr* client_addr, int socklen, void* arg) {

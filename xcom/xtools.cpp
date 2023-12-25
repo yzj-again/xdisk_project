@@ -2,6 +2,11 @@
 #include "xtools.h"
 #ifdef _WIN32
 #include <io.h>
+#else
+#include <sys/types.h>
+#include <dirent.h>
+#include <unistd.h>
+#include <sys/stat.h>
 #endif // _WIN32
 
 XCOM_API std::string GetDirData(std::string path) {
@@ -23,7 +28,23 @@ XCOM_API std::string GetDirData(std::string path) {
         data += buf;
     } while (_findnext(dir, &file) == 0);
 #else
-
+	// linux
+	const char *dir = path.c_str();
+	DIR *dirpath = 0;
+	struct dirent *entry = 0;
+	struct stat statbuf;
+	dirpath = opendir(dir);
+	if(dirpath == NULL){
+		return data;
+	}
+	chdir(dir);
+	char buf[1024] = { 0 };
+	while((entry = readdir(dirpath)) != NULL){
+		lstat(entry->d_name,&statbuf);
+		if(S_ISDIR(statbuf.st_mode)) continue;
+		sprintf(buf,"%s,%ld;",entry->d_name,statbuf.st_size);
+		data+=buf;
+	}
 #endif // _WIN32
     // »•µÙΩ·Œ≤∑÷∫≈
     if (!data.empty())

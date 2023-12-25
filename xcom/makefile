@@ -1,8 +1,8 @@
 TARGET=libxcom.so
-OBJS=xserver_task.o xthread.o xthread_pool.o
-CPPFLAGS= -fPIC #±‡“Î‘¥¬Î
+OBJS=xserver_task.o xthread.o xthread_pool.o xcom_task.o xtools.o
+CPPFLAGS=-fPIC #±‡“Î‘¥¬Î
 LIBS=-levent -lpthread
 $(TARGET):$(OBJS)
-    g++ -shared $^ -o $@ $(TARGET)
+	g++ -shared $^ -o $@ $(LIBS)
 clean:
-    rm -rf $(OBJS) $(TARGET)
+	rm -rf $(OBJS) $(TARGET)

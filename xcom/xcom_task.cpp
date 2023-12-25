@@ -2,6 +2,7 @@
 #include <iostream>
 #include <event2/bufferevent.h>
 #include <event2/event.h>
+#include <string.h>
 static void SReadCB(struct bufferevent* bev, void* ctx);
 static void SWriteCB(struct bufferevent* bev, void* ctx);
 static void SEventCB(struct bufferevent* bev, short what, void* ctx);
