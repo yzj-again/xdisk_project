@@ -57,6 +57,7 @@ void XDiskGUI::Upload() {
     if (filename.isEmpty()) {
         return;
     }
+    // ÉÏ´«
     UpdateServerInfo();
     XDiskClient::Get()->Upload(filename.toStdString());
 }

@@ -16,8 +16,7 @@ enum MsgType
     MSG_GETDIR,// 请求目录
     MSG_DIRLIST,// 返回目录列表
     MSG_UPLOAD_INFO,// 请求上传文件
-
-
+    MSG_UPLOAD_ACCEPT,// 服务端准备号接收文件
     MSG_MAX_TYPE,// 用来验证类型正确
 };
 // 消息最大字节数

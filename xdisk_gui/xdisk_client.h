@@ -21,6 +21,8 @@ public:
     ///@brief 上传文件请求
     ///@para filepath 本地文件路径
     void Upload(std::string filepath);
+
+
     std::string get_server_ip() const { return server_ip_; }
     void set_server_ip(std::string serverIP) { this->server_ip_ = serverIP; }
     int get_server_port() const { return server_port_; }
